@@ -1,0 +1,862 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mentor  Frontend · Backend · AI · Robotics</title>
+  <meta name="description" content="Portfolio  production-quality single-page site showcasing frontend, backend, AI and robotics expertise." />
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#020617">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mentor Chibuzor",
+    "jobTitle": "Frontend · Backend · AI · Robotics Engineer",
+    "url": "https://yourdomain.example/",
+    "sameAs": ["https://github.com/yourhandle","https://linkedin.com/in/yourhandle"]
+  }
+  </script>
+
+  <style>
+    #social {
+}
+.social-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 2rem;
+}
+.social-card {
+display: flex;
+align-items: center;
+gap: 1.2rem;
+padding: 1.8rem;
+border-radius: 1.2rem;
+background: rgba(255, 255, 255, 0.03);
+backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px);
+border: 1px solid rgba(255, 255, 255, 0.06);
+transition: all 0.4s ease;
+text-decoration: none;
+color: inherit;
+position: relative;
+overflow: hidden;
+}
+.social-card::before {
+content: "";
+position: absolute;
+inset: 0;
+background: linear-gradient(120deg, rgba(0,204,176,0.15), rgba(63,169,245,0.15));
+opacity: 0;
+transition: opacity 0.4s ease;
+}
+.social-card:hover::before {
+opacity: 1;
+}
+.social-card:hover {
+transform: translateY(-6px) scale(1.02);
+box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+.social-icon {
+width: 48px;
+height: 48px;
+border-radius: 50%;
+flex-shrink: 0;
+background-size: cover;
+background-position: center;
+}
+.social-icon.tiktok {
+  background: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg') no-repeat center/contain;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(181deg) brightness(103%) contrast(101%);
+}
+
+.social-icon.twitter { background: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg') no-repeat center/contain; filter: invert(62%) sepia(88%) saturate(522%) hue-rotate(130deg) brightness(97%) contrast(96%); }
+.social-icon.youtube { background: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg') no-repeat center/contain; filter: invert(38%) sepia(95%) saturate(7397%) hue-rotate(357deg) brightness(91%) contrast(118%); }
+.social-icon.facebook {
+  background: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg')
+    no-repeat center/contain;
+  filter: invert(34%) sepia(83%) saturate(2402%) hue-rotate(197deg) brightness(95%) contrast(99%);
+}
+
+.social-icon.github { background: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg') no-repeat center/contain; filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(181deg) brightness(103%) contrast(101%); }
+.social-content h3 {
+font-size: 1.3rem;
+margin: 0 0 0.2rem 0;
+font-weight: 600;
+}
+.social-content p {
+margin: 0;
+font-size: 0.95rem;
+color: var(--muted);
+}
+    :root{
+      --bg:#060611;
+      --glass: rgba(255,255,255,0.04);
+      --accent:#6EE7B7;
+      --accent-2:#7C83FD;
+      --muted:rgba(255,255,255,0.6);
+      --card: rgba(255,255,255,0.03);
+      --max-width:1200px;
+      --radius:14px;
+    }
+    html,body{height:100%;}
+    body{margin:0; font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial; background:var(--bg); color:#e9eef8; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; line-height:1.35; overflow-x:hidden}
+
+    .wrap{max-width:var(--max-width); margin:0 auto; padding:48px 24px}
+    header{position:relative; padding:48px 0 24px}
+    nav{display:flex; justify-content:space-between; align-items:center; gap:12px}
+    .brand{display:flex; gap:12px; align-items:center}
+    .logo{width:48px; height:48px; border-radius:10px; background:linear-gradient(135deg,var(--accent),var(--accent-2)); display:grid; place-items:center; font-weight:700; color:#021; box-shadow:0 6px 18px rgba(124,131,253,0.14)}
+    .navlinks{display:flex; gap:12px; align-items:center}
+    .btn{background:transparent; border:1px solid rgba(255,255,255,0.06); padding:10px 14px; border-radius:10px; cursor:pointer; color:var(--muted); font-weight:600}
+    .btn:focus{outline:3px solid rgba(110,231,183,0.18)}
+
+    .hero{display:grid; grid-template-columns: 360px 1fr; gap:40px; align-items:center; min-height:70vh}
+    .profile-wrap{position:relative; width:360px; height:360px; display:grid; place-items:center}
+
+    .holo{width:320px; height:320px; border-radius:50%; display:grid; place-items:center; position:relative; transform-style:preserve-3d; transition:transform .35s cubic-bezier(.2,.9,.2,1); background: radial-gradient(closest-side, rgba(255,255,255,0.02), transparent 60%); box-shadow: 0 20px 50px rgba(0,0,0,0.6), inset 0 0 60px rgba(124,131,253,0.06)}
+    .frame{position:absolute; width:360px;height:360px; border-radius:50%; display:block; pointer-events:none; mix-blend-mode:screen; background: conic-gradient(from 120deg at 50% 50%, rgba(124,131,253,0.16), rgba(110,231,183,0.18), rgba(124,131,253,0.08)); filter:blur(18px); transform:translateZ(-40px) scale(1.08)}
+    .avatar{width:220px;height:220px;border-radius:50%; background:linear-gradient(180deg,#020617, #0a0f1a); display:grid; place-items:center; box-shadow:0 10px 30px rgba(2,6,23,0.6); overflow:hidden; border:1px solid rgba(255,255,255,0.04)}
+    .avatar img{width:100%; height:100%; object-fit:cover; display:block}
+
+    .rings{position:absolute; inset:0; pointer-events:none}
+    .ring{position:absolute; border-radius:50%; border:1px solid rgba(124,131,253,0.12); filter:blur(6px)}
+    .ring.r1{width:420px;height:420px; left:-30px; top:-30px}
+    .ring.r2{width:300px;height:300px; left:30px; top:30px; opacity:.8}
+
+    .hero-copy h1{font-size:42px; margin:0 0 12px; letter-spacing:-0.02em}
+    .hero-copy p{color:var(--muted); margin:0 0 18px}
+    .ctas{display:flex; gap:12px}
+
+    canvas#bg {position:fixed; inset:0; z-index:-1; display:block}
+
+    section{padding:80px 0}
+    .grid{display:grid; gap:18px}
+    .projects{grid-template-columns: repeat(auto-fit,minmax(240px,1fr))}
+    .card{background:var(--card); border-radius:12px; padding:16px; box-shadow: 0 6px 24px rgba(2,6,23,0.6); border:1px solid rgba(255,255,255,0.03)}
+    .project-media{height:140px; border-radius:8px; overflow:hidden; display:grid; place-items:center; background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent)}
+    .tags{display:flex; gap:8px; flex-wrap:wrap; margin-top:8px}
+    .tag{padding:6px 8px; font-size:12px; border-radius:8px; background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.03)}
+
+    .skills{display:grid; gap:10px}
+    .skill{display:flex; justify-content:space-between; align-items:center; gap:14px}
+    .meter{flex:1; height:10px; background:rgba(255,255,255,0.04); border-radius:8px; overflow:hidden}
+    .meter .fill{height:100%; width:0%; background:linear-gradient(90deg,var(--accent),var(--accent-2)); transition:width 900ms cubic-bezier(.2,.9,.2,1)}
+
+    .sim{height:220px; display:grid; place-items:center; background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); border-radius:12px}
+
+    .social-grid{display:grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap:18px}
+    .social-card{padding:20px; border-radius:12px; min-height:120px; display:flex; flex-direction:column; justify-content:center; gap:8px; background:linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.03)}
+
+    .about{display:grid; grid-template-columns:220px 1fr; gap:24px; align-items:center}
+    .about .photo{width:220px; height:220px; border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,0.04)}
+
+    footer{padding:40px 0; color:var(--muted); font-size:14px}
+
+    @media (max-width:900px){.hero{grid-template-columns:1fr; text-align:center} .about{grid-template-columns:1fr} .profile-wrap{margin:0 auto}}
+
+    @media (prefers-reduced-motion:reduce){.holo{transition:none!important} .meter .fill{transition:none}}
+
+    :focus{outline:none} :focus-visible{outline:3px solid rgba(124,131,253,0.16); outline-offset:3px}
+    /* Header / Navbar base */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  background: var(--primary);
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-info .brand-name {
+  font-weight: 700;
+}
+
+.brand-info .brand-role {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Nav links */
+.navlinks {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navlinks .btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.navlinks .btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Hamburger - hidden on desktop */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navlinks {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--bg);
+    padding: 1rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+  }
+
+  .navlinks.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+/* Simulator section */
+.sim {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* Canvas wrapper */
+.sim-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* desktop max width */
+  aspect-ratio: 3 / 1; /* maintains 600x200 ratio */
+}
+
+.sim-container canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Controls */
+.sim-controls {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  display: flex;
+  gap: 8px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .sim-controls {
+    bottom: 12px;
+    right: 12px;
+    flex-direction: column;
+  }
+
+  .sim-controls .btn {
+    width: 100%;
+  }
+}
+/* Contact section */
+#contact {
+  padding: 4rem 1rem;
+}
+
+.contact-form {
+  max-width: 600px;
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-form .card {
+  display: block;
+  padding: 1rem;
+  border-radius: 12px;
+  background: var(--card-bg);
+}
+
+.contact-form .label-title {
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 10px;
+  background: transparent;
+  color: inherit;
+  resize: vertical;
+}
+
+.input-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.input-row input {
+  flex: 1;
+  min-width: 120px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: transparent;
+  color: inherit;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.button-row .btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.button-row .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.button-row .whatsapp-btn {
+  background: #25D366;
+  color: #fff;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .input-row {
+    flex-direction: column;
+  }
+  
+  .button-row {
+    flex-direction: column;
+  }
+}
+/* Hero responsiveness */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 2rem;
+}
+
+.hero .profile-wrap {
+  flex: 1 1 300px; /* allow shrinking and growing */
+  min-width: 220px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.hero .hero-copy {
+  flex: 2 1 400px;
+  min-width: 280px;
+}
+
+.hero .hero-copy h1 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem); /* scale with screen size */
+  line-height: 1.2;
+}
+
+.hero .hero-copy p {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
+
+.hero .ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Ensure buttons wrap nicely on smaller screens */
+.hero .ctas .btn {
+  flex: 1 1 140px;
+  text-align: center;
+}
+
+/* Micro info at bottom */
+.hero .micro {
+  font-size: 0.8rem;
+  margin-top: 12px;
+  word-break: break-word;
+}
+
+/* Media query for very small screens */
+@media (max-width: 480px) {
+  .hero {
+    padding: 1rem;
+    gap: 16px;
+  }
+
+  .hero .profile-wrap,
+  .hero .hero-copy {
+    flex: 1 1 100%;
+  }
+
+  .hero .hero-copy h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero .hero-copy p {
+    font-size: 1rem;
+  }
+
+  .hero .ctas {
+    flex-direction: column;
+  }
+
+  .hero .ctas .btn {
+    width: 100%;
+  }
+}
+
+
+
+  </style>
+</head>
+<body>
+  <canvas id="bg" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <header>
+  <nav class="nav-container">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">M</div>
+      <div class="brand-info">
+        <div class="brand-name">Mentor Chibuzor</div>
+        <div class="brand-role">Frontend · Backend · AI · Robotics</div>
+      </div>
+    </div>
+    <div class="navlinks" role="navigation" aria-label="Main">
+      <button class="btn" id="cmd-help" title="Keyboard Shortcuts">?</button>
+      <button class="btn" id="open-settings">⚙</button>
+      <a class="btn" href="#projects">Projects</a>
+      <a class="btn" href="#contact">Contact</a>
+      <!-- Hamburger menu for mobile -->
+      <button class="hamburger" aria-label="Toggle Menu">☰</button>
+    </div>
+  </nav>
+</header>
+
+
+    <main>
+      <section class="hero">
+        <div class="profile-wrap" aria-hidden="false">
+          <div class="frame" aria-hidden="true"></div>
+          <div class="holo" id="holo">
+            <div class="rings">
+              <div class="ring r1"></div>
+              <div class="ring r2"></div>
+            </div>
+            <div class="avatar" id="avatar" role="img" aria-label="Profile avatar">
+              <!-- Replace the src below with your real profile photo or keep as avatar placeholder -->
+              <img id="avatarImg" src="./image/-zcg88k.jpg " alt="avatar placeholder"/>
+            </div>
+          </div>
+        </div>
+        <div class="hero-copy">
+          <h1>Interfaces that feel alive  frontend, backend, AI & robotics.</h1>
+          <p>Curious systems and expressive demos: Vector‑style eye emulators, offline companion robots, and production AI services.</p>
+          <div class="ctas">
+            <a class="btn" href="#projects">View Projects</a>
+            <a class="btn" href="#demo">Run Demo</a>
+          </div>
+          <div style="height:16px"></div>
+          <div class="micro">Keyboard shortcut: Press <kbd>/</kbd> to focus message, <kbd>?</kbd> for help</div>
+        </div>
+      </section>
+
+      <!-- About / Photo section (new) -->
+     <section id="about">
+<div class="floating-shape shape1"></div>
+<div class="floating-shape shape2"></div>
+<div class="floating-shape shape3"></div>
+
+
+<div class="wrap">
+<h2>About Me</h2>
+<div class="about card">
+<div class="photo">
+<!-- Replace this image URL with your actual photo (use webp/avif if possible) -->
+<img src="./adult4.jpg" alt="Mentor Chibuzor" />
+</div>
+<div>
+<p>I'm Mentor  I build <strong>frontend</strong>, <strong>backend</strong>, <strong>AI</strong>, and <strong>robotics</strong> projects. Recent work includes a <strong>Vector style eye emulator (Python)</strong>, <strong>Alxi</strong>  a job platform for Nigerians with housing rental integrations, <strong>lex.ai</strong>  a rental & listings helper, and an <strong>AI call care agent</strong>. See my GitHub for full repos and demos.</p>
+<p class="quick-links">Quick links: <a href="https://github.com/yourhandle" target="_blank" rel="noopener">GitHub</a> · <a href="https://linkedin.com/in/yourhandle" target="_blank" rel="noopener">LinkedIn</a></p>
+</div>
+</div>
+</div>
+</section>
+
+      <section id="projects">
+        <div class="wrap">
+          <h2>Selected projects</h2>
+          <div class="grid projects">
+
+            <article class="card" tabindex="0">
+              <div class="project-media" aria-hidden="false">
+                <!-- small demo/preview for vector eye emulator -->
+                <canvas width="360" height="140" data-type="eye-preview"></canvas>
+              </div>
+              <h3 style="margin:10px 0 4px">Vector style eye emulator (Python)</h3>
+              <p style="color:var(--muted);margin:0">An expressive eye emulator built in Python (Pygame/embedded) that drives realistic pupil movement, eyelids and emotional states. Used as the eye engine for a companion robot prototype.</p>
+              <div class="tags" aria-hidden="true"><span class="tag">Python</span><span class="tag">Pygame</span><span class="tag">Robotics</span></div>
+              <div style="margin-top:10px; display:flex; gap:8px">
+                <a class="btn" href="#demo">Playback</a>
+                <a class="btn" href="https://github.com/yourhandle/vector-eye" target="_blank" rel="noopener">Source</a>
+              </div>
+            </article>
+
+            <article class="card" tabindex="0">
+              <div class="project-media">
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='300'><rect width='100%' height='100%' fill='%23020A17'/><g fill='%237C83FD'><rect x='60' y='40' width='120' height='120' rx='12'/></g></svg>" alt="Alxi" />
+              </div>
+              <h3 style="margin:10px 0 4px">Alxi  Job platform & rental features</h3>
+              <p style="color:var(--muted);margin:0">A platform to help Nigerians discover jobs and handle rental listings. Includes agent workflows, lease flows and integrated messaging for applicants & landlords.</p>
+              <div class="tags"><span class="tag">Node</span><span class="tag">Next.js</span><span class="tag">Product</span></div>
+              <div style="margin-top:10px; display:flex; gap:8px">
+                <a class="btn" href="#projects">Case study</a>
+                <a class="btn" href="https://github.com/yourhandle/alxi" target="_blank" rel="noopener">Source</a>
+              </div>
+            </article>
+
+            <article class="card" tabindex="0">
+              <div class="project-media">
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='300'><rect width='100%' height='100%' fill='%23020A17'/><g fill='%236EE7B7'><circle cx='120' cy='70' r='60'/></g></svg>" alt="lex.ai" />
+              </div>
+              <h3 style="margin:10px 0 4px">lex.ai  Rental & listings assistant</h3>
+              <p style="color:var(--muted);margin:0">A focused AI assistant for rental listings and tenant matching  natural language search over properties, automated lease summarization and messaging helpers.</p>
+              <div class="tags"><span class="tag">NLP</span><span class="tag">AI</span><span class="tag">Search</span></div>
+              <div style="margin-top:10px; display:flex; gap:8px">
+                <a class="btn" href="#projects">Read</a>
+                <a class="btn" href="https://github.com/yourhandle/lex.ai" target="_blank" rel="noopener">Source</a>
+              </div>
+            </article>
+
+            <article class="card" tabindex="0">
+              <div class="project-media">
+                <svg width="100%" height="100%" viewBox="0 0 200 100" preserveAspectRatio="xMidYMid slice"><rect width="100%" height="100%" rx="8" fill="#030316" /><circle cx="30" cy="50" r="12" fill="#6EE7B7"></circle></svg>
+              </div>
+              <h3 style="margin:10px 0 4px">AI Call Care Agent</h3>
+              <p style="color:var(--muted);margin:0">An agent for inbound/outbound caller flows  integrates speech‑to‑text, retrieval and slot filling to automate support tasks for businesses.</p>
+              <div class="tags"><span class="tag">Speech</span><span class="tag">AI</span><span class="tag">Telephony</span></div>
+              <div style="margin-top:10px; display:flex; gap:8px">
+                <a class="btn" href="#projects">Details</a>
+                <a class="btn" href="https://github.com/yourhandle/ai-call-agent" target="_blank" rel="noopener">Source</a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="demo">
+  <div class="wrap">
+    <h2>Live demo  micro-simulator</h2>
+    <div class="sim card">
+      <div class="sim-container">
+        <canvas id="simCanvas" aria-label="robot simulator" role="img"></canvas>
+        <div class="sim-controls">
+          <button class="btn" id="simRun">Run</button>
+          <button class="btn" id="simReset">Reset</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      <!-- Premium social/media section (new) -->
+      <section id="social">
+<div class="wrap">
+<h2>Social & Creative</h2>
+<p class="section-intro">A visual showcase of social previews, links and creative highlights  follow for demos, short explainers and build logs.</p>
+<div class="social-grid">
+<a class="social-card" href="https://twitter.com/yourhandle" target="_blank" rel="noopener">
+<div class="social-icon twitter"></div>
+<div class="social-content">
+<h3>Twitter / X</h3>
+<p>Short demos & build threads</p>
+</div>
+</a>
+<a class="social-card" href="https://youtube.com/yourchannel" target="_blank" rel="noopener">
+<div class="social-icon youtube"></div>
+<div class="social-content">
+<h3>YouTube</h3>
+<p>Explainer videos & walkthroughs</p>
+</div>
+</a>
+<a class="social-card" href="https://facebook .com/yourhandle" target="_blank" rel="noopener">
+<div class="social-icon facebook "></div>
+<div class="social-content">
+<h3>Facebook </h3>
+<p>Visual highlights & short clips</p>
+</div>
+</a>
+
+<a class="social-card" href="https://facebook .com/yourhandle" target="_blank" rel="noopener">
+<div class="social-icon tiktok"></div>
+<div class="social-content">
+<h3>Tiktok</h3>
+<p>Visual highlights & short clips</p>
+</div>
+</a>
+
+<a class="social-card" href="https://github.com/kenmentor" target="_blank" rel="noopener">
+<div class="social-icon github"></div>
+<div class="social-content">
+<h3>GitHub</h3>
+<p>Source, demos & repos</p>
+</div>
+</a>
+</div>
+</div>
+</section>
+
+      <section id="skills">
+        <div class="wrap">
+          <h2>Skills</h2>
+          <div class="skills">
+            <div class="skill"><div style="width:160px">Frontend</div><div class="meter" aria-hidden="true"><div class="fill" data-val="92"></div></div></div>
+            <div class="skill"><div style="width:160px">Backend</div><div class="meter" aria-hidden="true"><div class="fill" data-val="88"></div></div></div>
+            <div class="skill"><div style="width:160px">AI / ML</div><div class="meter" aria-hidden="true"><div class="fill" data-val="85"></div></div></div>
+            <div class="skill"><div style="width:160px">Robotics</div><div class="meter" aria-hidden="true"><div class="fill" data-val="86"></div></div></div>
+          </div>
+        </div>
+      </section>
+
+   <section id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p style="color:var(--muted); margin-bottom:1rem;">
+      Email: <a href="mailto:hello@yourdomain.example">hello@yourdomain.example</a> · 
+      GitHub: <a href="https://github.com/yourhandle" target="_blank">yourhandle</a> · 
+      LinkedIn: <a href="https://linkedin.com/in/yourhandle" target="_blank">yourhandle</a> · 
+      WhatsApp: <a href="https://wa.me/2349117264336" target="_blank">+234 911 726 4336</a>
+    </p>
+
+    <form action="https://formsubmit.co/youremail@example.com" method="POST" class="contact-form">
+      <input type="hidden" name="_subject" value="Portfolio message">
+      
+      <label class="card">
+        <div class="label-title">Message</div>
+        <textarea name="message" rows="5" placeholder="Your message here..." required></textarea>
+      </label>
+
+      <div class="input-row">
+        <input name="name" placeholder="Your name" required />
+        <input name="email" type="email" placeholder="Email" required />
+      </div>
+
+      <div class="button-row">
+        <button class="btn" type="submit">Send</button>
+        <button class="btn" type="reset">Reset</button>
+        <a class="btn whatsapp-btn" href="https://wa.me/2349117264336?text=Hi%20Mentor%2C%20I%20saw%20your%20portfolio%20and%20want%20to%20get%20in%20touch!" target="_blank">
+          Send via WhatsApp
+        </a>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+    </main>
+
+    <footer>
+      <div class="wrap">© 2025 Mentor  Crafted with code, telescopes & coffee.</div>
+    </footer>
+  </div>
+
+  <dialog id="settingsDlg" aria-label="Settings dialog">
+    <form method="dialog" style="padding:18px; width:340px; background:#050612; color:#e9eef8; border-radius:12px">
+      <h3>Settings</h3>
+      <div style="display:flex; gap:8px; align-items:center; margin:8px 0">
+        <input type="checkbox" id="reduceMotion" /> <label for="reduceMotion">Reduce motion</label>
+      </div>
+      <div style="display:flex; gap:8px; align-items:center; margin:8px 0">
+        <input type="checkbox" id="toggleAvatar" checked/> <label for="toggleAvatar">Enable AI pet / avatar</label>
+      </div>
+      <div style="display:flex; gap:8px; align-items:center; margin:8px 0">
+        <button class="btn" id="closeSettings">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script type="module">
+
+    const $ = s => document.querySelector(s);
+    const $$ = s => Array.from(document.querySelectorAll(s));
+// JS to toggle mobile menu
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".navlinks");
+
+  const whatsappBtn = document.querySelector('.whatsapp-btn');
+  const form = document.querySelector('.contact-form');
+
+  whatsappBtn.addEventListener('click', (e) => {
+    e.preventDefault(); // prevent default link
+
+    const name = form.querySelector('input[name="name"]').value.trim();
+    const email = form.querySelector('input[name="email"]').value.trim();
+    const message = form.querySelector('textarea[name="message"]').value.trim();
+
+    if (!name || !email || !message) {
+      alert("Please fill out your name, email, and message before sending via WhatsApp!");
+      return;
+    }
+
+    const phone = "2349117264336"; // Your WhatsApp number
+    const text = `Hi Mentor, I want to get in touch.%0A%0AName: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0AMessage: ${encodeURIComponent(message)}`;
+    const url = `https://wa.me/${phone}?text=${text}`;
+
+    window.open(url, '_blank'); // open WhatsApp chat
+  });
+
+
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
+
+
+    // Background particles
+    const canvas = document.getElementById('bg');
+    const ctx = canvas.getContext('2d');
+    let DPR = Math.max(1, window.devicePixelRatio || 1);
+    const particles = [];
+    function resizeBg(){ canvas.width = innerWidth * DPR; canvas.height = innerHeight * DPR; canvas.style.width = innerWidth + 'px'; canvas.style.height = innerHeight + 'px'; }
+    function initParticles(n=80){ particles.length = 0; for(let i=0;i<n;i++){ particles.push({x:Math.random()*canvas.width, y:Math.random()*canvas.height, r:Math.random()*1.5+0.4, tw:Math.random()*1.5+0.5, phase:Math.random()*Math.PI*2}); } }
+    function updateBg(t){ ctx.clearRect(0,0,canvas.width,canvas.height); for(const p of particles){ p.phase += 0.01; const a = 0.5 + Math.sin(t*0.001*p.tw + p.phase)*0.5; ctx.beginPath(); ctx.arc(p.x, p.y, p.r*DPR, 0, Math.PI*2); ctx.fillStyle = `rgba(255,255,255,${0.05*a})`; ctx.fill(); } }
+
+    // Avatar follow + stabilized 3D tilt (smoothed + clamped to avoid glitches at extremes)
+    const holo = $('#holo');
+    const avatar = $('#avatar');
+    let avatarEnabled = true; let reduceMotion = false;
+
+    // smoothing state
+    let targetX = 0, targetY = 0; let smoothX = 0, smoothY = 0; const SMOOTH = 0.12; // lower = smoother
+    const MAX_TILT_Y = 10; const MAX_TILT_X = 6; const MAX_PX = 8; const MAX_PY = 6;
+
+    function clamp(v,min,max){ return Math.max(min, Math.min(max, v)); }
+
+    function onMove(e){
+      const rect = holo.getBoundingClientRect();
+      // if pointer far outside holo, ignore  prevents extreme jumps when pointer leaves viewport
+      if(e.clientX < rect.left - 120 || e.clientX > rect.right + 120 || e.clientY < rect.top - 120 || e.clientY > rect.bottom + 120) return;
+      const cx = rect.left + rect.width/2; const cy = rect.top + rect.height/2;
+      const x = (e.clientX - cx) / (rect.width/2); const y = (e.clientY - cy) / (rect.height/2);
+      // clamp target to avoid extreme values and glitches
+      targetX = clamp(x, -1, 1); targetY = clamp(y, -1, 1);
+    }
+
+    // animate smoothing in RAF loop
+    function applyAvatarTransforms(){
+      // lerp
+      smoothX += (targetX - smoothX) * SMOOTH;
+      smoothY += (targetY - smoothY) * SMOOTH;
+      if(!avatarEnabled) { holo.style.transform = 'none'; avatar.style.transform = 'none'; return; }
+      const tiltX = clamp(smoothY * -MAX_TILT_X, -MAX_TILT_X, MAX_TILT_X);
+      const tiltY = clamp(smoothX * MAX_TILT_Y, -MAX_TILT_Y, MAX_TILT_Y);
+      holo.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+      const tx = clamp(smoothX * MAX_PX, -MAX_PX, MAX_PX);
+      const ty = clamp(smoothY * MAX_PY, -MAX_PY, MAX_PY);
+      avatar.style.transform = `translate3d(${tx}px, ${ty}px, 12px)`;
+    }
+
+    let blinkTimeout;
+    function blinkLoop(){ if(!avatarEnabled || reduceMotion) return; avatar.animate([{opacity:1},{opacity:0.92},{opacity:1}], {duration:420, iterations:1}); blinkTimeout = setTimeout(blinkLoop, 4000 + Math.random()*6000); }
+
+    // Simple simulation (robotic eye follows a point)
+    const sim = document.getElementById('simCanvas');
+    const sctx = sim.getContext('2d');
+    let simRunning = false;
+    function drawSim(t){ sctx.clearRect(0,0,sim.width,sim.height); sctx.fillStyle = '#020317'; sctx.fillRect(0,0,sim.width,sim.height); const cx = sim.width/2 + Math.sin(t*0.002)*80; const cy = sim.height/2 + Math.cos(t*0.001)*8; sctx.fillStyle = '#0b1220'; sctx.beginPath(); sctx.arc(cx, cy, 42, 0, Math.PI*2); sctx.fill(); sctx.fillStyle = '#7C83FD'; sctx.beginPath(); sctx.arc(cx-6, cy-4, 18, 0, Math.PI*2); sctx.fill(); sctx.fillStyle = '#020617'; sctx.beginPath(); sctx.arc(cx-6, cy-4, 8, 0, Math.PI*2); sctx.fill(); }
+
+    // small eye preview for the Vector emulator (renders into canvas elements with data-type="eye-preview")
+    function drawEyePreview(c){ const ctx = c.getContext('2d'); const w=c.width, h=c.height; ctx.clearRect(0,0,w,h); const t = performance.now(); const cx = w/2 + Math.sin(t*0.002)*18; const cy = h/2 + Math.cos(t*0.001)*2; ctx.fillStyle = '#020317'; ctx.fillRect(0,0,w,h); ctx.beginPath(); ctx.fillStyle = '#0b1220'; ctx.arc(cx, cy, 34, 0, Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.fillStyle = '#7C83FD'; ctx.arc(cx-4, cy-3, 14, 0, Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.fillStyle = '#020617'; ctx.arc(cx-4, cy-3, 6, 0, Math.PI*2); ctx.fill(); }
+
+    function loop(t){ updateBg(t); // avatar smoothing
+      applyAvatarTransforms(); // eye previews
+      document.querySelectorAll('canvas[data-type="eye-preview"]').forEach(c=>drawEyePreview(c)); requestAnimationFrame(loop); }
+
+    // Setup
+    function start(){ DPR = Math.max(1, window.devicePixelRatio || 1); resizeBg(); initParticles(Math.min(200, Math.round((innerWidth*innerHeight)/90000))); requestAnimationFrame(loop); blinkLoop(); $$('.fill').forEach(fill=>{ const val = fill.dataset.val || 50; setTimeout(()=>{ fill.style.width = val+'%';}, 320);}); }
+
+    window.addEventListener('resize', ()=>{ resizeBg(); initParticles(); });
+    // pointermove with passive listener but we also clamp
+    window.addEventListener('pointermove', onMove, {passive:true});
+    document.getElementById('open-settings').addEventListener('click', ()=>{ document.getElementById('settingsDlg').showModal(); });
+    document.getElementById('closeSettings').addEventListener('click', ()=>{ document.getElementById('settingsDlg').close(); });
+
+    $('#reduceMotion').addEventListener('change', (e)=>{ reduceMotion = e.target.checked; if(reduceMotion){ document.documentElement.style.setProperty('scroll-behavior','auto'); } else { document.documentElement.style.removeProperty('scroll-behavior'); } });
+    $('#toggleAvatar').addEventListener('change', (e)=>{ avatarEnabled = e.target.checked; if(!avatarEnabled){ holo.style.transform = 'none'; avatar.style.transform = 'none'; clearTimeout(blinkTimeout);} else { blinkLoop(); } });
+
+    document.addEventListener('keydown', (e)=>{ if(e.key === '?') { e.preventDefault(); $('#cmd-help').click(); } if(e.key === '/') { const f = document.querySelector('[name=message]'); if(f){ f.focus(); e.preventDefault(); } } });
+
+    $('#cmd-help').addEventListener('click', ()=>{ alert('Shortcuts:\n/ → focus message box\n? → help\nS → open settings (when focused)'); });
+
+    document.getElementById('simRun').addEventListener('click', ()=>{ if(!simRunning){ simRunning=true; simLoop(performance.now()); document.getElementById('simRun').textContent='Stop'; } else { simRunning=false; document.getElementById('simRun').textContent='Run'; } });
+    document.getElementById('simReset').addEventListener('click', ()=>{ simRunning=false; drawSim(0); document.getElementById('simRun').textContent='Run'; });
+
+    function simLoop(t){ if(!simRunning) return; drawSim(t); requestAnimationFrame(simLoop); }
+
+    resizeBg(); initParticles(); drawSim(0); start();
+
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){ $('#reduceMotion').checked = true; $('#reduceMotion').dispatchEvent(new Event('change')); }
+    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ const dlg = document.getElementById('settingsDlg'); if(dlg.open) dlg.close(); } });
+
+    if('serviceWorker' in navigator){ navigator.serviceWorker.register('/sw.js').catch(()=>console.warn('SW registration failed')); }
+
+  </script>
+
+</body>
+</html>
