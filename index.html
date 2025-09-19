@@ -528,7 +528,7 @@ color: var(--muted);
 <div class="about card">
 <div class="photo">
 <!-- Replace this image URL with your actual photo (use webp/avif if possible) -->
-<img src="./image/me.jpeg" style="width: 100%; height: 100%; object-position: bottom ; object-fit: cover;" alt="Mentor Chibuzor" />
+<img src="./adult4.jpg" alt="Mentor Chibuzor" />
 </div>
 <div>
 <p>I'm Mentor  I build <strong>frontend</strong>, <strong>backend</strong>, <strong>AI</strong>, and <strong>robotics</strong> projects. Recent work includes a <strong>Vector style eye emulator (Python)</strong>, <strong>Alki</strong>  a job platform for Nigerians with housing rental integrations, <strong>lex.ai</strong>  a rental & listings helper, and an <strong>AI call care agent</strong>. See my GitHub for full repos and demos.</p>
@@ -600,11 +600,22 @@ color: var(--muted);
         </div>
       </section>
 
-      <section id="demo">
+      <section id="demo " style="display: none;">
   <div class="wrap">
-       <iframe src="https://agent-with-me-frountend.vercel.app/"  style="width: 100%; height: 600px;" title="Embedded Page Example"></iframe>
+    <h2>Live demo  micro-simulator</h2>
+    <div class="sim card">
+      <div class="sim-container">
+        <canvas id="simCanvas" aria-label="robot simulator" role="img"></canvas>
+        <div class="sim-controls">
+          <button class="btn" id="simRun">Run</button>
+          <button class="btn" id="simReset">Reset</button>
+        </div>
+      </div>
     </div>
   </div>
+</section>
+<section id="demo " >
+  <iframe src="https://agent-with-me-frountend.vercel.app/" style="width: 100%; height: 600px;"></iframe>
 </section>
 
 
@@ -659,10 +670,10 @@ color: var(--muted);
         <div class="wrap">
           <h2>Skills</h2>
           <div class="skills">
-            <div class="skill"><div style="width:160px">Frontend</div><div class="meter" aria-hidden="true"><div class="fill"  style="width: 80%;">hel</div></div></div>
-            <div class="skill"><div style="width:160px">Backend</div><div class="meter" aria-hidden="true"><div class="fill" style="width: 98%;"></div></div></div>
-            <div class="skill"><div style="width:160px">AI / ML</div><div class="meter" aria-hidden="true"><div class="fill" style="width: 70%;"></div></div></div>
-            <div class="skill"><div style="width:160px">Robotics</div><div class="meter" aria-hidden="true"><div class="fill" style="width: 50%;"></div></div></div>
+            <div class="skill"><div style="width:160px">Frontend</div><div class="meter" aria-hidden="true"><div class="fill" data-val="80"></div></div></div>
+            <div class="skill"><div style="width:160px">Backend</div><div class="meter" aria-hidden="true"><div class="fill" data-val="98"></div></div></div>
+            <div class="skill"><div style="width:160px">AI / ML</div><div class="meter" aria-hidden="true"><div class="fill" data-val="85"></div></div></div>
+            <div class="skill"><div style="width:160px">Robotics</div><div class="meter" aria-hidden="true"><div class="fill" data-val="86"></div></div></div>
           </div>
         </div>
       </section>
